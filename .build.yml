@@ -1,6 +1,6 @@
 image: alpine/edge
 secrets:
-  - 016ed22e-56d3-4866-8aaa-268e77a41c8a
+  - e592e466-8d8b-4b07-b13f-2ca1e50b1720
 sources:
   - git@git.sr.ht/~iameyad/advent-of-code-2025
 environment:
