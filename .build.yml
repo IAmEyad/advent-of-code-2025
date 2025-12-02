@@ -7,7 +7,7 @@ environment:
   GIT_SSH_COMMAND: ssh -o StrictHostKeyChecking=no
 tasks:
   - setup: |
-      echo 'cd <repo>' >> ~/.buildenv
+      echo 'cd advent-of-code-2025' >> ~/.buildenv
   - check: |
       if [ "$(git rev-parse origin/main)" != "$(git rev-parse HEAD)" ]; then \
         complete-build; \
