@@ -1,0 +1,16 @@
+image: alpine/edge
+secrets:
+  - 016ed22e-56d3-4866-8aaa-268e77a41c8a
+sources:
+  - git@git.sr.ht/~iameyad/advent-of-code-2025
+environment:
+  GIT_SSH_COMMAND: ssh -o StrictHostKeyChecking=no
+tasks:
+  - setup: |
+      echo 'cd <repo>' >> ~/.buildenv
+  - check: |
+      if [ "$(git rev-parse origin/main)" != "$(git rev-parse HEAD)" ]; then \
+        complete-build; \
+      fi
+  - mirror: |
+      git push --force --mirror git@github.com:IAmEyad/advent-of-code-2025.git
